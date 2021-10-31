@@ -103,6 +103,15 @@ div {
   -o-transition: all 200ms ease;
   transition: all 200ms ease;
 }
+
+.link-primary {
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
 .book_button:hover {
   background: rgba(255, 255, 255, 0.2);
 }
@@ -481,7 +490,7 @@ Menu
 }
 .header-one {
   padding-left: 0;
-  padding-right: 30px;
+  padding-right: 0;
 }
 
 /* .navbar-fixed {
@@ -528,12 +537,16 @@ ul.top-info-box {
   float: right;
 }
 
-@media (min-width: 300px) {
+@media (min-width: 350px) {
   ul.top-info-box {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+
     align-items: center;
+  }
+
+  .user-admin {
+    margin-top: 10px;
   }
 }
 

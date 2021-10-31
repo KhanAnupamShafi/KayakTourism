@@ -6,14 +6,14 @@ A online Travel Booking System app using MongoDB , Node.js/ Node Express Server 
 
 ## Live Link (<img src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black" />)
 
-This project is deployed at [https://vethouse-clinic.web.app/](https://vethouse-clinic.web.app/).
+This project is deployed at [https://kayak-tourism.web.app/](https://kayak-tourism.web.app/).
 
 ### How to Use -
 
 - <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" /> Clone From-
 
   ```
-  git clone https://github.com/Programming-Hero-Web-Course3/healthcare-related-website-KhanAnupamShafi
+  git clone https://github.com/programming-hero-web-course1/tourism-or-delivery-website-client-side-KhanAnupamShafi
   ```
 
 - Then Run-
@@ -24,10 +24,12 @@ This project is deployed at [https://vethouse-clinic.web.app/](https://vethouse-
 
 ### Learn About This Project
 
-- An Veterinary Health Care site which provides various health care services for pets
-- Api data self-generated and hosted from Local/Public folder , all images are hosted at [imagebb.com](https://ibb.co/album/ym8YfF).
+- An Kayak Tourism site provides various travel booking services for the clients
+- REST Api data is build with Node.js and Express.js. hosted from Heroku Live Server ,
+- Database Collections are stored at MongoDB Atlas [imagebb.com](https://ibb.co/album/ym8YfF).
 - React Custom hooks used for Firebase Authentication
 - React Routing enabled with private route using context api
+- React Hook Form Validation Used
 - Responsive Enabled for mobile devices
 
 ## 👩‍💻 Languages Used:
@@ -36,10 +38,16 @@ This project is deployed at [https://vethouse-clinic.web.app/](https://vethouse-
 [<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>]
 [<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1"/>]
 
+## ⚡ Database 🔝
+
+[<img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"/>]
+[<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />]
+<img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
+
 ## 🚀 Web Frameworks / 📱 Library:
 
 [<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />]
-[<img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />]
+[<img src="https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white" />]
 [<img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" />]
 [<img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" />]
 [<img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"/>]
@@ -47,3 +55,4 @@ This project is deployed at [https://vethouse-clinic.web.app/](https://vethouse-
 ## ☁ Cloud:
 
 <img src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black" />
+<img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" />

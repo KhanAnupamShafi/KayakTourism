@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Header.css";
 
 import {
+  AccountCircle,
   CardMembershipRounded,
   Close,
   EmailOutlined,
@@ -17,6 +18,8 @@ import logo from "../../Images/Logo/logo_two.svg";
 import { Link } from "react-router-dom";
 
 import {
+  Avatar,
+  Box,
   Button,
   Divider,
   Drawer,
@@ -53,6 +56,7 @@ const Header = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [booked, setBooked] = useState([]);
 
   // sign in event
 
@@ -82,10 +86,22 @@ const Header = () => {
     setOpen(!open);
   };
 
+  //ger total orders
+
+  //get personal bookings info
+
+  useState(() => {
+    fetch(
+      `https://shrieking-skeleton-21491.herokuapp.com/bookings/${user?.email}`
+    )
+      .then((res) => res.json())
+      .then((data) => setBooked(data.length));
+  }, [user.email]);
+
   return (
     <div className="super_container ">
       {/* !-- Header --> */}
-      <div className="header-one " style={{ backgroundColor: "#ffa37b" }}>
+      <div className="header-one " style={{ backgroundColor: "#CF5300" }}>
         <div className="container">
           <div className="logo-area">
             <div className="row flex-column flex-md-row align-items-center justify-content-between">
@@ -99,7 +115,7 @@ const Header = () => {
                 <div className="d-flex flex-column flex-sm-row align-items-center justify-content-between">
                   {" "}
                   <div>
-                    <ul className="top-info-box">
+                    <ul className="top-info-box flex-nowrap">
                       <li>
                         <div className="info-box">
                           <div className="info-box-content">
@@ -130,7 +146,7 @@ const Header = () => {
                       </li>
                       <li className="d-none d-lg-block last">
                         <div className="info-box last">
-                          <div className="info-box-content">
+                          <div className="info-box-content flex-nowrap">
                             <p className="info-box-title">
                               <CardMembershipRounded fontSize="small" /> Global
                               Certificate
@@ -141,21 +157,34 @@ const Header = () => {
                       </li>
                     </ul>
                   </div>
-                  <div className="header-get-a-quote mb-2 mb-lg-0 d-flex flex-column flex-md-row">
-                    <Link
-                      className="btn btn-lg btn-warning px-3 mt-2 mt-xs-0"
-                      to="/"
-                      style={{ marginRight: "10px" }}
-                    >
-                      Sign in
-                    </Link>
-                    <Link
-                      className="btn btn-lg bg-warning px-3 mt-2 mt-xs-0"
-                      style={{ marginRight: "10px" }}
-                      to="/dashboard"
-                    >
-                      Admin Dashboard
-                    </Link>
+                  <div className="header-get-a-quote mb-2 mb-lg-0 d-flex flex-column flex-md-row align-items-start p-0-lg">
+                    {user?.email && (
+                      <Box>
+                        <button
+                          className="user-admin mb-2 "
+                          size="small"
+                          aria-label="account of current user"
+                          aria-controls="menu-appbar"
+                          aria-haspopup="true"
+                          color="inherit"
+                          sx={{ display: "inline", flexDirection: "row" }}
+                        >
+                          <AccountCircle /> Hello, {user?.displayName}
+                        </button>
+                        <Link
+                          className="px-3 mt-2 mt-xs-0"
+                          style={{
+                            marginRight: "10px",
+                            textDecoration: "none",
+                          }}
+                          to="/dashboard"
+                        >
+                          <Button variant="contained" color="warning">
+                            Admin Dashboard
+                          </Button>
+                        </Link>
+                      </Box>
+                    )}
                   </div>
                 </div>
               </div>
@@ -201,7 +230,7 @@ const Header = () => {
           </div>
           <div className="ml-auto d-flex flex-row align-items-center justify-content-start">
             <nav className="main_nav">
-              <ul className="d-flex flex-row align-items-start justify-content-start">
+              <ul className="d-flex flex-row align-items-center justify-content-start">
                 <li>
                   <NavLink
                     to="/home"
@@ -215,30 +244,83 @@ const Header = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <a href="about.html">About us</a>
+                  <NavLink
+                    to="/about"
+                    className=""
+                    activeStyle={{
+                      fontWeight: "bold",
+                      color: "#CF5300",
+                    }}
+                  >
+                    Why Choose us
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="/">Rooms</a>
+                  <NavLink
+                    to="/blog"
+                    className=""
+                    activeStyle={{
+                      fontWeight: "bold",
+                      color: "#CF5300",
+                    }}
+                  >
+                    Blog
+                  </NavLink>
                 </li>
                 <li>
-                  <a href="blog.html">Blog</a>
+                  <NavLink
+                    to="/contact"
+                    className=""
+                    activeStyle={{
+                      fontWeight: "bold",
+                      color: "#CF5300",
+                    }}
+                  >
+                    Contact
+                  </NavLink>
                 </li>
-                <li>
-                  <a href="contact.html">Contact</a>
-                </li>
+                {user?.email && (
+                  <li>
+                    <Link
+                      to="/bookings"
+                      className="d-flex align-items-start justify-content-center gap-4 link-primary"
+                    >
+                      <button
+                        type="button"
+                        className="btn btn-primary position-relative"
+                      >
+                        My Bookings
+                        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                          {booked}
+                          <span className="visually-hidden">
+                            unread messages
+                          </span>
+                        </span>
+                      </button>
+                      <Avatar
+                        alt="avatar"
+                        sx={{ cursor: "pointer" }}
+                        src={user.photoURL}
+                      />
+                    </Link>
+                  </li>
+                )}
               </ul>
             </nav>
+
             {user?.email ? (
-              <div className="signout_btn">
-                <Button
-                  onClick={handleLogOut}
-                  size="larger"
-                  variant="contained"
-                  color="error"
-                >
-                  <LogoutOutlined fontSize="inherit" /> Sign Out
-                </Button>
-              </div>
+              <Box className="d-none d-lg-block">
+                <div className="signout_btn">
+                  <Button
+                    onClick={handleLogOut}
+                    size="larger"
+                    variant="contained"
+                    color="error"
+                  >
+                    <LogoutOutlined fontSize="inherit" /> Sign Out
+                  </Button>
+                </div>
+              </Box>
             ) : (
               <div className="book_button">
                 <Link to="/register">
@@ -308,29 +390,47 @@ const Header = () => {
               <Divider />
               <Divider />
               <List>
-                <ListItem component={Link} to="/dashboard">
+                <ListItem component={Link} to="/">
                   <ListItemIcon>
                     <InboxTwoTone />
                   </ListItemIcon>
                   <ListItemText primary="Home" />
                 </ListItem>
-                <ListItem component={Link} to="/dashboard">
+                <ListItem component={Link} to="/bookings">
                   <ListItemIcon>
                     <InboxTwoTone />
                   </ListItemIcon>
-                  <ListItemText primary="Blog" />
+                  <ListItemText primary="My Bookings" />
                 </ListItem>
-                <ListItem component={Link} to="/dashboard">
-                  <ListItemIcon>
-                    <InboxTwoTone />
-                  </ListItemIcon>
-                  <ListItemText primary="Hotels" />
-                </ListItem>
+
+                {user?.email ? (
+                  <ListItem>
+                    <ListItemIcon>
+                      <InboxTwoTone />
+                    </ListItemIcon>
+
+                    <ListItemText
+                      onClick={handleLogOut}
+                      className="btn btn-primary"
+                      primary="Sign Out"
+                    />
+                  </ListItem>
+                ) : (
+                  <ListItem component={Link} to="/register">
+                    <ListItemIcon>
+                      <InboxTwoTone />
+                    </ListItemIcon>
+                    <ListItemText
+                      className="btn btn-primary"
+                      primary="Sign In"
+                    />
+                  </ListItem>
+                )}
               </List>
               <Divider />
               <List sx={{ color: "primary.main" }}>
                 {["All Bookings", "Add Tours", "Spam"].map((text, index) => (
-                  <ListItem button key={text}>
+                  <ListItem component={Link} to="/dashboard" button key={text}>
                     <ListItemIcon>
                       {index % 2 === 0 ? <InboxTwoTone /> : <MailOutline />}
                     </ListItemIcon>

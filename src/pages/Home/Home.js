@@ -1,12 +1,22 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { ArrowLeftTwoTone, ArrowRightTwoTone } from "@mui/icons-material";
+import {
+  ArrowLeftTwoTone,
+  ArrowRightTwoTone,
+  KeyboardArrowUp,
+} from "@mui/icons-material";
 import React from "react";
 import Slider from "react-slick";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import banner from "../../Images/Banner/banner.png";
 import Packages from "../../components/Packages/Packages";
+import SearchTour from "../../components/SearchTour/SearchTour";
+
+import { Fab } from "@mui/material";
+import ScrollToTop from "./ScrollToTop";
+import About from "../About/About";
+
 const NextArrow = ({ onClick }) => {
   return (
     <div className="nextArrow" onClick={onClick}>
@@ -22,15 +32,15 @@ const PrevArrow = ({ onClick }) => {
     </div>
   );
 };
-const Home = () => {
+const Home = (props) => {
   const settings = {
     className: "center",
     centerMode: false,
     infinite: true,
     initialSlide: 0,
     slidesToShow: 1,
-    autoplay: false,
-    autoplaySpeed: 2000,
+    autoplay: true,
+    autoplaySpeed: 3000,
     speed: 500,
     nextArrow: <NextArrow onClick />,
     prevArrow: <PrevArrow onClick />,
@@ -52,7 +62,7 @@ const Home = () => {
       <div id="hero" className="container-carousel">
         {" "}
         <Slider {...settings}>
-          <div>
+          <div id="back-to-top-anchor">
             <div className="carousel-container">
               <div className="container">
                 <h2 className="animate__animated animate__fadeInDown">
@@ -134,7 +144,33 @@ const Home = () => {
         </Link>
       </div>
       {/* //------------------------Packages / Services--------------------------------- */}
+      <SearchTour />
       <Packages />
+      <About />
+
+      {/* /* ---------------------------------- //map ---------------------------------  */}
+
+      <div className="map p-2">
+        <div className="mapouter">
+          <div className="gmap_canvas">
+            <iframe
+              title="map"
+              width="600"
+              height="500"
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?q=kawlar%20bazar&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            ></iframe>
+            <br />
+            <a href="https://www.embedgooglemap.net">google map for free</a>
+          </div>
+        </div>
+      </div>
+
+      <ScrollToTop {...props}>
+        <Fab color="secondary" size="small" aria-label="scroll back to top">
+          <KeyboardArrowUp />
+        </Fab>
+      </ScrollToTop>
     </>
   );
 };

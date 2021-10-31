@@ -6,9 +6,17 @@ import Header from "./components/Header/Header";
 import { createTheme, ThemeProvider } from "@mui/material";
 import Home from "./pages/Home/Home";
 import NotFound from "./pages/NotFound/NotFound";
+import "animate.css";
 import "./App.css";
 import Register from "./pages/Register/Register";
 import AuthProvider from "./context/AuthProvider";
+import AdminDashboard from "./pages/AdminDashboard/AdminDashboard";
+import Booking from "./components/Booking/Booking";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import MyOrders from "./pages/MyOrders/MyOrders";
+import ScrollToTop from "./ScrollToTop";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
 
 // Theme context
 
@@ -47,7 +55,7 @@ function App() {
         <AuthProvider>
           <Router>
             <Header />
-
+            <ScrollToTop />
             <Switch>
               <Route exact path="/">
                 <Home />
@@ -55,9 +63,24 @@ function App() {
               <Route path="/home">
                 <Home />
               </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/contact">
+                <Contact />
+              </Route>
               <Route path="/register">
                 <Register />
               </Route>
+              <PrivateRoute path="/dashboard">
+                <AdminDashboard />
+              </PrivateRoute>
+              <PrivateRoute path="/bookings">
+                <MyOrders />
+              </PrivateRoute>
+              <PrivateRoute path="/booking/:id">
+                <Booking />
+              </PrivateRoute>
               <Route path="*">
                 <NotFound />
               </Route>

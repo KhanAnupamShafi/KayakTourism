@@ -1,22 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./NotFound.css";
 
 const NotFound = () => {
   return (
     <div id="wrapper" className="container-fluid">
-      <div class="glitch" data-text="GLITCH">
-        404 Error
-      </div>
-      <div class="text-center">
-        <div class="error mx-auto" data-text="404">
-          404
+      <div className="breadcrumb-section breadcrumb-bg">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 offset-lg-2 text-center">
+              <div className="breadcrumb-text">
+                <p>The page you requested for is not found.</p>
+                <h1>404 - Not Found</h1>
+              </div>
+              <button className="btn mt-4  text-light btn-primary">
+                <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+                  Back to Home
+                </Link>
+              </button>
+            </div>
+          </div>
         </div>
-        <p class="lead text-gray-800 mb-5">Page Not Found</p>
-        <p class="text-gray-500 mb-0">
-          It looks like you found a glitch in the matrix...
-        </p>
-        <a href="index.html">&larr; Back to Dashboard</a>
       </div>
     </div>
   );

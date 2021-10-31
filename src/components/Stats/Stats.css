@@ -1,0 +1,61 @@
+/*-- stats --*/
+.stats h3.heading {
+  color: #f8f9fa;
+}
+.stats p {
+  color: #ccc;
+  text-transform: capitalize;
+}
+
+.stats-left h4 span {
+  font-size: 50px;
+  font-weight: 600;
+  color: #f4b200;
+}
+
+.stats-left h4 {
+  color: #fff;
+}
+
+.stats-right h4 {
+  font-size: 2.4em;
+  font-weight: 700;
+  margin: 15px 0;
+  color: #fff;
+}
+
+.stats-right span.fa {
+  color: #fff;
+  font-size: 20px;
+  background: #f4b20094;
+  width: 65px;
+  height: 65px;
+  text-align: center;
+  line-height: 65px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.stats {
+  max-width: 40vh;
+  min-width: 100vw;
+  background: url("https://i.ibb.co/ng436LS/tuscany-rome.png") no-repeat top
+    center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+.brands a span.fa {
+  font-size: 3em;
+  color: #333;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+  -o-transition: 0.5s all;
+}
+
+/*-- //stats --*/

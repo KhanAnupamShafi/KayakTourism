@@ -4,6 +4,7 @@
 .App {
   font-family: "Jost", "Overpass", sans-serif;
   text-align: center;
+  scroll-behavior: smooth;
 }
 
 .App-logo {

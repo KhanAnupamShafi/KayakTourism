@@ -1,3 +1,4 @@
+import { Facebook, Instagram, LinkedIn, Twitter } from "@mui/icons-material";
 import React from "react";
 import "./Footer.css";
 const Footer = () => {
@@ -12,7 +13,7 @@ const Footer = () => {
                 <div className="footer-head">
                   <div className="footer-logo">
                     <h2>
-                      <span>e</span>Business
+                      <span>Kayak</span>Tourism
                     </h2>
                   </div>
 
@@ -25,22 +26,22 @@ const Footer = () => {
                     <ul>
                       <li>
                         <a href="/">
-                          <i className="bi bi-facebook"></i>
+                          <Facebook />
                         </a>
                       </li>
                       <li>
                         <a href="/">
-                          <i className="bi bi-twitter"></i>
+                          <Twitter />
                         </a>
                       </li>
                       <li>
                         <a href="/">
-                          <i className="bi bi-instagram"></i>
+                          <Instagram />
                         </a>
                       </li>
                       <li>
                         <a href="/">
-                          <i className="bi bi-linkedin"></i>
+                          <LinkedIn />
                         </a>
                       </li>
                     </ul>
@@ -54,8 +55,8 @@ const Footer = () => {
                 <div className="footer-head">
                   <h4>information</h4>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor.
+                    Want to read more reviews? See our pages on Facebook,
+                    Instagram and Yelp.
                   </p>
                   <div className="footer-contacts">
                     <p>
@@ -78,7 +79,7 @@ const Footer = () => {
                   <h4>Instagram</h4>
                   <div className="flicker-img">
                     <a href="/">
-                      <img src="https://i.ibb.co/7v4L9y3/babySit.png" alt="" />
+                      <img src="https://i.ibb.co/WH4yFmf/rome.jpg" alt="" />
                     </a>
                     <a href="/">
                       <img
@@ -100,7 +101,7 @@ const Footer = () => {
                     </a>
                     <a href="/">
                       <img
-                        src="https://i.ibb.co/tZPFHk1/clean-Water.png"
+                        src="https://i.ibb.co/DrsggSZ/luca-bravo-O453-M2-Liufs-unsplash.jpg"
                         alt=""
                       />
                     </a>
@@ -123,17 +124,16 @@ const Footer = () => {
             <div className="col-md-12 col-sm-12 col-xs-12">
               <div className="copyright text-center">
                 <p>
-                  &copy; Copyright <strong>eBusiness</strong>. All Rights
-                  Reserved
+                  &copy; Copyright <strong>Khan Anupam Shafi</strong>. All
+                  Rights Reserved
                 </p>
               </div>
               <div className="credits">
-                All the links in the footer should remain intact. You can delete
-                the links only if you purchased the pro version. Licensing
-                information: https://bootstrapmade.com/license/ Purchase the pro
-                version with working PHP/AJAX contact form:
-                https://bootstrapmade.com/buy/?theme=eBusiness Designed by{" "}
-                <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                Looking for an adult study abroad experience? Check out our new
+                brand Sojrn. Feel free to leave your info for occasional
+                reminders that you need a vacation. Also so we can let you know
+                about new trips, deals, and events. Name Email Subscribe Now ©
+                2021 by KAYAK TRAVEL, Dhaka, Bangadesh | HELLO@FTLOTRAVEL.COM
               </div>
             </div>
           </div>

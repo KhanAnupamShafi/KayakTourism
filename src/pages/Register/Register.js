@@ -1,11 +1,29 @@
 import { Facebook, Google } from "@mui/icons-material";
 import React from "react";
+import { useHistory, useLocation } from "react-router";
 import useAuth from "../../hooks/useAuth";
-import useFirebase from "../../hooks/useFirebase";
+// import useFirebase from "../../hooks/useFirebase";
 import "./Register.css";
 
 const Register = () => {
-  const { user, setUser, setError, handleGoogleSignIn } = useAuth();
+  const {
+    user,
+    isLoading,
+    error,
+    setIsLoading,
+    setUser,
+    setError,
+    handleGoogleSignIn,
+  } = useAuth();
+  console.log("loading stats:", isLoading + user);
+  console.log(error);
+
+  // redirecting user to initial route
+
+  const location = useLocation();
+  const history = useHistory();
+  console.log(location);
+  const redirect_uri = location.state?.from || "/";
 
   //handle Google Sign Firebase
 
@@ -14,10 +32,13 @@ const Register = () => {
     handleGoogleSignIn()
       .then((result) => {
         setUser(result.user);
+        history.push(redirect_uri);
+        setError("");
       })
       .catch((error) => {
         setError(error.message);
-      });
+      })
+      .finally(setIsLoading(false));
   };
 
   return (

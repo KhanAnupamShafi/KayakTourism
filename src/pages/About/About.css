@@ -1,0 +1,80 @@
+/*-- /testimonials --*/
+
+.testimonials {
+  background: #f4b200;
+}
+
+.test-info {
+  text-align: center;
+}
+
+.test-info h3 {
+  font-size: 0.9em;
+  color: #fff;
+  font-weight: 600;
+}
+
+.test-img img {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -moz-border-radius: 50%;
+  padding: 4px;
+  background: hsla(21, 60%, 94%, 0.33);
+  width: 15%;
+}
+
+.w3layouts-footer.test-soc ul li {
+  display: inline-block;
+  margin: 0 0.3em;
+}
+
+.w3layouts-footer.test-soc ul li a span {
+  color: #fff;
+  margin: 0 0.5em;
+  padding: 2em 4em;
+}
+
+.test-info p {
+  background: #011144;
+  padding: 3em;
+  font-size: 0.85em;
+  border-radius: 4px;
+  position: relative;
+}
+
+.test-info p span {
+  font-size: 1.5em;
+  color: #d3d1d3;
+}
+
+ul.w3layouts-icons.clients li {
+  text-align: center;
+  display: inline-block;
+}
+
+ul.w3layouts-icons.clients li a span {
+  color: #ffffff;
+  font-size: 0.7em;
+  margin: 0 0.1em;
+}
+
+ul.w3layouts-icons.clients li span:hover {
+  color: #39d6af;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+}
+
+.test-info {
+  text-align: center;
+}
+
+.test-info h3 {
+  font-size: 0.9em;
+  color: #fff;
+  font-weight: 600;
+}

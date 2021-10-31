@@ -22,6 +22,7 @@ const useFirebase = () => {
   const googleProvider = new GoogleAuthProvider();
 
   const handleGoogleSignIn = () => {
+    setIsLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
   // ...
@@ -35,6 +36,7 @@ const useFirebase = () => {
       } else {
         // User is signed out
         setUser({});
+
         // ...
       }
       setIsLoading(false);
@@ -47,6 +49,7 @@ const useFirebase = () => {
   // Log-out user
 
   const handleLogOut = (params) => {
+    setIsLoading(true);
     signOut(auth)
       .then(() => {
         // Sign-out successful.
@@ -54,11 +57,14 @@ const useFirebase = () => {
       })
       .catch((error) => {
         // An error happened.
-      });
+      })
+      .finally(setIsLoading(false));
   };
 
   return {
     user,
+    isLoading,
+    setIsLoading,
     setUser,
     handleGoogleSignIn,
     handleLogOut,
