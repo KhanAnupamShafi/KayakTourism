@@ -157,7 +157,7 @@ const Header = () => {
                       </li>
                     </ul>
                   </div>
-                  <div className="header-get-a-quote mb-2 mb-lg-0 d-flex flex-column flex-md-row align-items-start p-0-lg">
+                  <div className="header-get-a-quote mb-2 mb-lg-0 d-flex flex-column flex-md-row align-items-start p-2 p-0-lg">
                     {user?.email && (
                       <Box>
                         <button

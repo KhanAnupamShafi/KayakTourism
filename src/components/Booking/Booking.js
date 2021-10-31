@@ -62,7 +62,7 @@ const Booking = () => {
       .then((res) => {
         //  console.log(res);
         if (res.data.insertedId) {
-          alert("added succefully");
+          alert("Added Succefully");
           reset();
         }
       });
@@ -301,7 +301,7 @@ const Booking = () => {
 
       {/* /* ----------------------------- <detail section ----------------------------  */}
 
-      <div className="container-fluid py-0 overflow-hidden">
+      <div className="container-fluid py-0 overflow-hidden ">
         <div className="row">
           <div className="col-lg-6 px-0">
             <img
@@ -314,7 +314,7 @@ const Booking = () => {
             <div className="mx-6 mx-xl-8 my-8">
               <div className="align-items-center d-block d-flex mb-5">
                 <img
-                  className="img-fluid me-3 me-md-2 me-lg-4"
+                  className="img-fluid me-3 me-md-2 me-lg-4 d-none d-sm-block"
                   src={icon_one}
                   alt="..."
                 />
@@ -322,14 +322,14 @@ const Booking = () => {
                   <h5 className="fw-bold text-light">
                     Visit the greatest places in
                   </h5>
-                  <Typography variant="h3" component="p" color="secondary">
+                  <Typography variant="h4" color="secondary">
                     {tour?.location}
                   </Typography>
                 </div>
               </div>
               <div className="align-items-center d-block d-flex mb-5">
                 <img
-                  className="img-fluid me-3 me-md-2 me-lg-4"
+                  className="img-fluid me-3 me-md-2 me-lg-4 d-none d-sm-block"
                   src={icon}
                   alt="..."
                 />
@@ -349,16 +349,15 @@ const Booking = () => {
               </div>
               <div className="align-items-center d-block d-flex mb-5">
                 <img
-                  className="img-fluid me-3 me-md-2 me-lg-4"
+                  className="img-fluid me-3 me-md-2 me-lg-4 d-none d-sm-block"
                   src={icon_two}
                   alt="..."
                 />
 
                 <div className="flex-1 align-items-center pt-2">
                   <h5 className="fw-bold text-light">
-                    Save{" "}
-                    <span style={{ fontSize: "1.5em", color: "red" }}>50%</span>{" "}
-                    on your next trip
+                    Save <span style={{ color: "red" }}>50%</span> on your next
+                    trip
                   </h5>
                 </div>
               </div>
